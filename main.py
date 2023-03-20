@@ -19,6 +19,21 @@ class estudiantes:
         self.listaEstudiantes.append(self.estudiante)
         print()
 
+    def actualizarEstudiantes(self):
+        print("Actualizaremos la información de un estudiante del Colegio")
+        print()
+        print("Ingrese el indice del estudiante:")
+        numIndice = int(input())
+        print("Actualizaremos la información de", self.listaEstudiantes[numIndice])
+        print("Ingrese el nombre del estudiante:")
+        self.estudianteNombre = input()
+        print("Ingrese el apellido del estudiante:")
+        self.estudianteApellido = input()
+        self.estudiante = self.estudianteNombre, self.estudianteApellido
+        print("Se cambio la información por", self.estudiante, "en la lista de estudiantes.")
+        self.listaEstudiantes[numIndice] = self.estudiante
+        print()
+
     def expulsarEstudiantes(self):
         print("Expulsaremos un estudiante del Colegio")
         print()
@@ -40,10 +55,12 @@ time.sleep(1)
 
 while True:
     print("Ingrese la actividad que le gustaria realizar"
-          "\n(Agregar - Expulsar - Consultar)")
+          "\n(Agregar - Actualizar - Expulsar - Consultar)")
     accion = str(input())
     if accion.upper() == "AGREGAR":
         claseEstudiantes.agregarEstudiantes()
+    elif accion.upper() == "ACTUALIZAR":
+        claseEstudiantes.actualizarEstudiantes()
     elif accion.upper() == "EXPULSAR":
         claseEstudiantes.expulsarEstudiantes()
     elif accion.upper() == "CONSULTAR":
