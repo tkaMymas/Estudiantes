@@ -4,6 +4,7 @@ class estudiantes:
     def __init__(self):
         self.estudianteNombre = ""
         self.estudianteApellido = ""
+        self.estudiante = []
         self.listaEstudiantes = []
 
     def agregarEstudiantes(self):
@@ -13,17 +14,18 @@ class estudiantes:
         self.estudianteNombre = input()
         print("Ingrese el apellido del estudiante:")
         self.estudianteApellido = input()
-        print("Se agrego el nombre de", self.estudianteNombre, self.estudianteApellido, "en la lista de estudiantes.")
+        self.estudiante = self.estudianteNombre, self.estudianteApellido
+        print("Se agrego el nombre de", self.estudiante, "en la lista de estudiantes.")
         self.listaEstudiantes.append(self.estudiante)
         print()
 
     def expulsarEstudiantes(self):
         print("Expulsaremos un estudiante del Colegio")
         print()
-        print("Ingrese el nombre del estudiante:")
-        self.estudiante = input()
+        print("Ingrese el indice del estudiante:")
+        numIndice = int(input())
         print("Se ha expulsado al estudiante", self.estudiante ,"del Colegio Downtown.")
-        self.listaEstudiantes.remove(self.estudiante)
+        self.listaEstudiantes.pop(numIndice)
         print()
 
     def consultarEstudiantes(self):
